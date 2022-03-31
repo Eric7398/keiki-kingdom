@@ -1,0 +1,63 @@
+
+.contact {
+    width: 100%;
+    min-height: 974px;
+    padding: 6rem 1rem;
+
+    background: url('../../assets/background/kids-wall.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.contact .container {
+    display: flex;
+    width: 100%;
+    height: 700px;
+    padding: 2rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.contact .content {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    margin: 1rem;
+}
+
+.contact .content-form form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.contact h1 {
+    font-size: 6rem;
+    overflow: hidden;
+    text-shadow: 0 0 5px black, 0 0 5px black, 0 0 5px black, 0 0 5px black;
+}
+
+.contact h3{
+    font-size: 2rem;
+    color: #f8f8f8;
+    overflow: hidden;
+    text-shadow: 0 0 3px black, 0 0 3px black, 0 0 3px black, 0 0 3px black;
+    padding-bottom: 5px;
+}
+.contact h2{
+    text-shadow: 0 0 3px black, 0 0 3px black, 0 0 3px black, 0 0 3px black;
+}
+.content-info{
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: center;
+    gap: 5%;
+    background-color: rgba(0, 0, 0, .8);
+}
+

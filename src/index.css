@@ -1,6 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Butterfly+Kids&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chela+One&display=swap');
+
+
+/* CSS VARIABLES */
+:root {
+  --primary-color: #5BC6F6;
+  --primary-dark: #00306e;
+  --primary-button: #47dcff;
+  --font-default: 'Roboto', sans-serif;
+  --font-kids: 'Bubblegum Sans', cursive;
+}
+
+
+.collapsible .collapse-content {
+  padding: 10px;
+  background-color: rgb(240, 240, 240);
+}
+.collapsible .collapse-header {
+  transition: .2s ease-in-out;
+  background-color: rgb(200, 200, 200);
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  /* border-bottom: 2px solid rgb(220, 220, 220); */
+}
+
+.collapsible .collapse-header .collapse-icon {
+  margin-right: 10px;
+}
+
+
+span {
+  color: var(--primary-color);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+
+p {
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+  overflow: hidden;
+}
+
+h1 {
+  font-size: 6rem;
+  color: #f8f8f8;
+  padding: 5px 10px;
+  overflow: hidden;
+  text-shadow: 0 0 5px black, 0 0 5px black, 0 0 5px black, 0 0 5px black;
+
+}
+h1:hover{
+  text-shadow: none !important;
+  background-image: linear-gradient(90deg, rgba(255,212,1,1) 15%, rgba(255,145,0,1) 39%, rgba(255,118,210,1) 61%, rgba(91,198,246,1) 85%);
+  -webkit-background-clip: text;
+  color: transparent;
+  transition: .2s all;
+}
+
+.title{
+  transition: all .2s ease-in-out;
+  cursor: default;
+}
+.title:hover{
+  transform: scale(1.1);
+
+}
+.title:active{
+  transform: scale(1);
+}
+
+
+h2 {
+  font-size: 4rem;
+  color: #f8f8f8;
+  overflow: hidden;
+}
+
+h3 {
+  padding: 0 5px;
+
+}
+
+/* LINK EFFECTS */
+.link-hover {
+	position: relative;
+}
+
+.link-hover:after {
+	content: "";
+	position: absolute;
+	bottom: -3px;
+	height: 4px;
+	width: 0;
+	right: 0;
+	transition: all 300ms ease;
+  box-shadow: 0 0 1.2px black, 0 0 1.2px black, 0 0 1.2px black, 0 0 1.2px black;
+
+}
+.link__hover-color:after {
+  background: white;
+
+  /* linear-gradient(90deg, rgba(255,212,1,1) 20%, rgba(255,118,210,1) 50%, rgba(91,198,246,1) 80%) */
+}
+.link-hover:hover:after {
+	left: 0;
+	width: 100%;
+  
+}
+/* -------------------------------------------- */
+
+
+.container {
+  max-width: 1240px;
+  margin: auto;
+}
+
+button {
+  font-family: var(--font-kids);
+  padding: .7rem;
+  background-color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  color: #f8f8f8;
+  font-size: 1.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  transition: all .2s linear;
+  height: 50px;
+  cursor: pointer;
+
+}
+
+button:hover{
+  background-color: dodgerblue;
+  border: 1px solid dodgerblue;
+  letter-spacing: 1px;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 10px rgba(0,0,0,1);
+}
+
+button:active{
+  transform: translateY(0);
+  box-shadow: 0 2px 5px rgba(0,0,0,1);
+}
+
+/* @media screen and (max-width: 940px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+} */
+
+/* Default index.css styling */
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Bubblegum Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;

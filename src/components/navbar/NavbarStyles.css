@@ -1,0 +1,217 @@
+.header {
+    position: fixed;
+    height: 100px;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    transition: .3s ease-in;
+    overflow: hidden;
+    /* border-bottom-left-radius: 15%;
+    border-bottom-right-radius: 15%; */
+
+}
+
+.header-bg{
+    background-color: rgba(0,0,0,.8);
+    
+}
+
+.header .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1240px;
+    margin: auto;
+    height: 100%;
+    padding: 0 1rem;
+    /* z-index: 100; */
+}
+
+
+
+.header .navbar .logo img{
+    width: 130px;
+    height: auto;
+}
+
+.hamburger {
+    display: none;
+    margin-right: 1rem;
+    z-index: 100;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    position: relative;
+    background-color: rgb(0, 0, 0, .7);
+}
+
+.fatimes,
+.fabars{
+    color: #ffffff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.header .navbar .nav-menu {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    padding: 1rem;
+    z-index: 100;
+}
+
+.header li {
+    margin-left: 2rem;
+    color: #fff;
+    font-size: 1.4rem;
+    text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
+}
+.header li:hover{
+
+    
+}
+
+.header .navbar .cross{
+    text-decoration: line-through;
+    cursor: not-allowed;
+}
+
+.header .navbar button {
+    width: 100px;
+    margin-right: 1rem;
+}
+
+.header .navbar .hamburger .icon{
+    font-size: 3rem;
+    color: #fff;
+}
+
+@media screen and (max-width: 940px) {
+    .header {
+        max-width: 100%;
+        /* border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0; */
+    }
+
+    .header .navbar{
+        overflow: hidden;
+        max-width: 100%;
+    }
+    
+    .header .navbar .hamburger {
+        display: block;
+        z-index: 1001;
+        margin-right: 0;
+
+    }
+    .header .navbar .nav-menu .link-hover:after {
+        bottom: 0px;
+        height: 15px;
+    }
+    .header .navbar .nav-menu {
+        position: fixed;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 100%;
+        z-index: 1000;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(0,0,0,.9);
+        transition: .3s ease;
+        
+    }
+    
+    .header .navbar .active {
+        left: 0;
+    }
+    .link-hover:after{
+        box-shadow: none;
+    }
+    .header .navbar li {
+        overflow: hidden;
+        padding: 0;
+        margin: 0;
+        margin-bottom: 3vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+        height: 100px;
+        border-radius: 5px;
+        font-size: 3.5rem;
+        text-shadow: none;
+        
+
+    }
+
+    .header .navbar button {
+        overflow: hidden;
+        width: 200px;
+        height: 100px;
+        display: flex;
+        margin-top: 0;
+        justify-content: center;
+        align-items: center;
+        font-size: 3.5rem;
+        background-color: var(--primary-dark);
+        border: none;
+        margin-right: 0;
+    }
+
+    .navbar ul .yellow{
+        background-color: #FFD401;
+    }
+
+    .navbar ul .orange{
+        background-color: #FF9100;
+    }
+    .navbar ul .green{
+        background-color: #a3d827;
+    }
+
+    .navbar ul .pink{
+        background-color: #FF76D2;
+    }
+
+    .navbar ul .blue{
+        background-color: #5BC6F6;
+    }
+}
+
+@media screen and (max-width: 475px) {
+
+    .header .navbar li {
+        width: 175px;
+        height: 85px;
+        margin-bottom: 1.1rem;
+        font-size: 3rem;
+
+    }
+
+    .header .navbar button {
+        font-size: 3rem;
+        width: 175px;
+        height: 85px;
+
+    }
+
+    .header .navbar .logo img{
+        margin-top: 15px;
+        width: 100px;
+    }
+
+
+
+    .header .navbar .hamburger .icon{
+        font-size: 2.5rem;
+
+    }
+
+}
