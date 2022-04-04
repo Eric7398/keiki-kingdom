@@ -519,8 +519,12 @@ const Home = () => {
                                     }
                                 },
                                 "shape": {
-                                    "options": {},
-                                    "type": "circle"
+                                    "options": {
+                                        "star": {
+                                            "sides": 5
+                                        }
+                                    },
+                                    "type": "star"
                                 },
                                 "size": {
                                     "random": {
