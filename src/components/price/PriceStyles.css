@@ -1,125 +1,331 @@
-
 #price-header,
 #admission,
-#passes,
 #party {
     padding: 6rem 1rem;
     width: 100%;
-    min-height: 974px;
-    background: url('../../assets/background/kingdom.jpg') no-repeat center center/cover;
+    min-height: 100vh;
+    background: url('../../assets/background/rulesbg.jpg') no-repeat center center/cover;
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
-
 }
 
 
-img{
+/* #price-header::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: linear-gradient(to top, black, transparent);
+    z-index: 100;
+} */
+
+
+img {
     width: 500px;
     height: 332px;
     object-fit: cover;
 }
 
-#admission{
-    background: lightgray;
+#admission {
+    background: url('../../assets/background/kingdom.jpg') no-repeat center center/cover;
+
 }
-#passes{
-    background: darkgray;
-    
-}
+
+
 #party {
-    background: gray;
+    background: url('../../assets/background/bday2.jpg') no-repeat center center/cover;
 
 }
 
+.link-blue {
+    color: var(--primary-color);
+}
 
-#price-header .price-desc{
-    display: flex;
+.link-blue:hover {
+    border-bottom: 5px solid white;
+    transition: .2s ease-in-out;
+}
+
+#price-header .price-desc {
     max-width: 800px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    margin-bottom: 50px;
     text-align: center;
-
+    padding: 1rem;
 }
 
-#price-header .price-desc p{
+#price-header .price-desc p {
     font-size: 1.5rem;
     color: #fff;
     padding: 2rem;
     height: 300px;
 }
+
+#price-header .price-desc h2 {
+    padding: 5px;
+}
+
+.price p {
+    font-size: 1.5rem;
+    padding: 5px;
+    color: white;
+    /* background-color: rgba(0, 0, 0, .8); */
+    text-shadow: 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black;
+    text-align: center;
+}
+
+/* #admission p {
+    color: black;
+    text-shadow: none;
+} */
+
 #price-header .container {
     width: 100%;
     text-align: center;
+    margin-top: 1rem;
 }
 
 
 #price-header .content {
     display: flex;
     /* flex-direction: column; */
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 1rem;
+    gap: 290px;
     z-index: 10;
-    
 }
 
-#price-header button{
+.arrow-down {
+    animation: upDown 1s ease infinite;
+    font-size: 3.2rem;
+    color: white;
+}
+
+.media-arrow .arrow-down {
+    display: none;
+}
+
+@keyframes upDown {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+
+#price-header button {
     text-transform: uppercase;
     width: 200px;
     margin-bottom: 1rem;
     border: 4px solid dodgerblue;
 }
 
-#price-header button:hover{
+#price-header button:hover {
     border: 4px solid var(--primary-color);
 
 }
+
 #price-header h1,
 #admission h1,
-#passes h1,
 #party h1 {
     text-align: center;
     overflow: hidden;
 }
 
-/* ----------------------------- ADMISSION ----------------------------- */
-#admission .container{
+#price-header h2 {
+    text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black;
+    font-size: 3.5rem;
+}
+
+#admission .container,
+#party .container {
     display: flex;
-    flex-direction: row;
-    gap: 2rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
 }
 
-
-#admission table{
-    border-collapse: collapse;
-
-}
-
-#admission th,
-#admission td {
-    padding: 15px;
+#admission .content,
+#party .content {
+    width: auto;
+    max-width: 600px;
     text-align: center;
-    font-size: 2rem;
-} 
-.td1{
-    text-align: left !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+
 }
-#admission tr{
+
+#admission .note {
+    font-size: 1rem;
+}
+
+/* ----------------------------- TABLE ----------------------------- */
+#admission table {
+
+
+    background: radial-gradient(circle, rgb(245, 159, 244) 25%, rgb(125, 185, 253) 100%);
+    background-size: 500%;
+    animation: gradient 10s ease infinite;
+    transition: .2s ease;
+
+}
+
+
+table {
+    border-collapse: collapse;
+    margin: 10px 0;
+
+    background: radial-gradient(circle, rgb(245, 159, 244) 25%, rgb(125, 185, 253) 100%);
+    background-size: 500%;
+    animation: gradient 10s ease infinite;
+    transition: .2s ease;
+    border: 5px solid black;
+
+}
+
+th,
+td {
+    padding: 12px;
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+.td1 {
+    /* text-align: left !important; */
+    border-right: 3px solid black;
+}
+
+tr {
     border-bottom: 3px solid black;
 }
 
-#admission tr:hover{
-    background-image: linear-gradient(90deg, rgba(255,212,1,1) 15%, rgba(255,145,0,1) 39%, rgba(255,118,210,1) 61%, rgba(91,198,246,1) 85%);
-    color: white;
-    text-shadow: 0 0 5px black, 0 0 5px black, 0 0 5px black, 0 0 5px black;
-}
-
-#admission .expand-menu{
-    height: 1px;
+tr:hover,
+tr:hover p {
+    color: white !important;
+    text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black !important;
 }
 
 
+table p {
+    color: black !important;
+    text-shadow: none !important;
+    padding: 0px !important;
+    background-color: transparent !important;
+}
+
+
+@media screen and (max-width: 840px) {
+    #price-header .price-desc p {
+        font-size: 1.4rem;
+        color: #fff;
+        padding: 1rem;
+        height: auto;
+    }
+
+}
+
+
+@media screen and (max-width: 752px) {
+
+    #admission h1,
+    #party h1 {
+        font-size: 4rem;
+    }
+
+}
+
+@media screen and (max-width: 660px) {
+    #price-header h2 {
+        font-size: 3rem;
+    }
+
+    #price-header button {
+        padding: 0px;
+        width: 147px;
+        font-size: 1.2rem;
+    }
+
+    th,
+    td {
+        padding: 5px 0px;
+        font-size: 1.5rem;
+    }
+
+}
+
+@media screen and (max-width: 580px) {
+    #price-header h2 {
+        font-size: 2.5rem;
+    }
+
+    #price-header button {
+        padding: 0px;
+        width: 147px;
+        font-size: 1.19rem;
+    }
+
+    #price-header .content {
+        gap: 200px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .arrow-down {
+        display: none;
+    }
+
+    .media-arrow .arrow-down {
+        display: inline-block;
+    }
+
+    .media-arrow {
+        display: flex;
+        justify-content: center;
+        gap: 115px;
+    }
+
+    #price-header {
+        height: auto;
+    }
+
+    #price-header .content {
+        padding: 0px;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        /* width: 147px; */
+        font-size: 1.19rem;
+    }
+
+    #price-header .price-desc p {
+        font-size: 1.2rem;
+        padding: 0rem;
+    }
+
+    .price p {
+        font-size: 1.3rem;
+        padding: 0px;
+    }
+
+    #party h1 {
+        font-size: 3rem !important;
+    }
+
+    th,
+    td {
+        padding: 5px 4px;
+        font-size: 1.3rem;
+    }
+}

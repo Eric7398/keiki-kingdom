@@ -1,22 +1,29 @@
 .placeholder {
-    z-index: 1;
+    z-index: 5;
     height: 0px;
     margin-bottom: 300px;
-    position: relative; 
+    position: relative;
+
 }
 
 footer {
     height: 300px;
     width: 100%;
-    background-color: rgb(15, 15, 15);
     margin: auto;
     z-index: -1;
     position: fixed;
     bottom: 0;
     padding: 2rem;
+
+    /* 
+    background: radial-gradient(circle, rgb(0, 0, 0) 25%, rgb(25, 25, 25) 75%);
+    background-size: 500%;
+    animation: gradient 15s ease infinite; 
+    */
+    background-color: rgb(15, 15, 15);
 }
 
-footer .container{
+footer .container {
     height: 100%;
     display: flex;
     justify-content: center;
@@ -25,37 +32,43 @@ footer .container{
 
 }
 
-footer .container img{
+footer .container img {
     width: 202px;
     cursor: pointer;
 }
 
-footer .container ul{
+footer .container ul {
     color: white;
     width: 100%;
-	max-width: 500px;
-	display: flex;
-	justify-content: space-around;
-	margin: 10px 0;
+    max-width: 500px;
+    display: flex;
+    justify-content: space-around;
+    margin: 10px 0;
     flex-wrap: wrap;
-    
+
 }
 
-footer ul li{
+footer ul li {
     font-size: 1.3rem;
     z-index: 2;
 }
 
-.copyright{
+.copyright {
     height: 3vh;
-    background-color: rgb(15, 15, 15);
     display: flex;
     justify-content: center;
-    
+
 }
 
-.copyright p{
-    font-size: 1rem;
+.copyright p {
+    font-size: 1.1rem !important;
     color: white;
     font-family: 'Roboto', sans-serif;
+}
+
+@media screen and (max-width: 390px) {
+    footer ul li {
+        margin: 0px 20px;
+    }
+
 }

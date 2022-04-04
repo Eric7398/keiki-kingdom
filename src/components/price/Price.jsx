@@ -1,131 +1,163 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Footer from '../footer/Footer'
 import TransitionPage from '../TransitionPage'
-import useCollapse from 'react-collapsed';
-import { FaPlus, FaMinus } from "react-icons/fa";
+import { FaArrowDown } from "react-icons/fa";
 
 import './PriceStyles.css'
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import { useAnimation } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
-function Section(props) {
-    const config = {
-        defaultExpanded: props.defaultExpanded || false,
-        collapsedHeight: props.collapsedHeight || 0
-    };
-    const { getCollapseProps, getToggleProps, isExpanded } = useCollapse(config);
-    return (
-        <div className="collapsible">
-            <div className="collapse-header"
-                style={isExpanded
-                    ? { backgroundColor: 'white' }
-                    : { backgroundColor: 'rgb(200, 200, 200)' }
-                }
-                {...getToggleProps()}>
-                <div className="collapse-icon">
-                    {isExpanded ? <FaMinus /> : <FaPlus />}
-                </div>
-                <div className="collapse-title"><h3>{props.title}</h3></div>
-            </div>
-            <div {...getCollapseProps()}>
-                <div className="collapse-content">
-                    {props.children}
-                </div>
-            </div>
-        </div>
-    );
-}
+
+
+
 
 const Price = () => {
+    // const { ref, inView } = useInView({
+    //     threshold: .5
+    // });
+    // const animation = useAnimation();
+
+
+    // useEffect(() => {
+    //     if (inView) {
+    //         animation.start({
+    //             opacity: 1,
+    //             x: 0,
+    //             transition: { type: 'spring', duration: 1, bounce: .3 }
+    //         });
+    //     }
+    //     if (!inView) {
+    //         animation.start({
+    //             x: '-100vw',
+    //             opacity: 0,
+    //         });
+    //     }
+    // }, [inView])
+
+
     return (
-        <>
+        <div className='price'>
             <TransitionPage>
 
                 <div id='price-header'>
                     <div className='price-desc'>
-
                         <h1 className='title'>Prices</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum veritatis accusamus magni numquam maxime dolor totam eligendi accusantium. Rerum molestiae, perferendis iusto ab repellat iste vel saepe in id expedita.</p>
+
+                        <h2>If you have any questions please check out the <Link to="/rules"><span className='link-blue'>rules</span></Link> or <Link to="/contact"><span className='link-blue'>contact</span></Link> us!</h2>
                     </div>
                     <div className="container">
-                        <h2>Check out our prices below!</h2>
+                        <h2><FaArrowDown className='arrow-down' /> Check Prices Below <FaArrowDown className='arrow-down' /></h2>
+                        <div className='media-arrow'><FaArrowDown className='arrow-down' /> <FaArrowDown className='arrow-down' /></div>
                         <div className="content">
-                            <button><a href="#admission">Admission</a></button>
-                            <button><a href="#passes">Passes</a></button>
-                            <button><a href="#party">Party Rooms</a></button>
+                            <button onClick={() => window.location.replace("/price#admission")}>Admission</button>
+                            <button onClick={() => window.location.replace("/price#party")}>Party Rooms</button>
+
                         </div>
                     </div>
                 </div>
 
 
                 <div id="admission">
-                    <h1 className='title'>General Admissions</h1>
-                    <p>Please note due to covid restrictions blah blah blah</p>
                     <div className="container">
+                        <h1 className='title'>General Admissions</h1>
+                        <p>Parents must accompany their children!</p>
                         <div className="content">
                             <table>
                                 <thead>
                                     <tr>
                                         <th></th>
-                                        <th>2 Hours</th>
-                                        <th>Entire Day</th>
+                                        <th>Children</th>
+                                        <th>Adult</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td className='td1'><strong>Adult and Children</strong></td>
-                                        <td>$20.00</td>
-                                        <td>$30.00</td>
+                                        <td className='td1'><strong>2 Hours</strong></td>
+                                        <td>$22</td>
+                                        <td>$5</td>
                                     </tr>
                                     <tr>
-                                        <td className='td1'><strong>Additional Children</strong></td>
-                                        <td>$10.00</td>
-                                        <td>$15.00</td>
+                                        <td className='td1'><strong>3 Hours</strong></td>
+                                        <td>$30</td>
+                                        <td>$5</td>
                                     </tr>
                                     <tr>
-                                        <td className='td1'><strong>Additional Adult</strong></td>
-                                        <td>$10.00</td>
-                                        <td>$15.00</td>
+                                        <td className='td1'><strong>4 Hours</strong></td>
+                                        <td>$40</td>
+                                        <td>$5</td>
+                                    </tr>
+                                    <tr>
+                                        <td className='td1'><strong>5 Hours</strong></td>
+                                        <td>$45</td>
+                                        <td>$5</td>
+                                    </tr>
+                                    <tr>
+                                        <td className='td1'><strong>Monthly Membership</strong><p className='note'><strong>Monday to Friday Only<br />No Holidays/Weekends</strong></p>
+                                        </td>
+                                        <td>$150</td>
+                                        <td>$30</td>
                                     </tr>
                                 </tbody>
                             </table>
-                            {/* EXPANDABLE MENU */}
-                            <div className="expand-menu">
-
-                                <Section title="What about infants?">
-                                    <p>Toddlers age 1 and under may blah blah blah</p>
-                                </Section>
-                                <Section title="What about other caregivers/guardians?">
-                                    <p>Adults must pay if blah blah</p>
-                                </Section>
-
-                            </div>
-
+                            <p><strong>Please Note:</strong> </p>
+                            <p>Children age: 10 months to 13 years old</p>
+                            <p>Non-paid infant must be in car seat or carried</p>
+                            <br />
+                            <p>Children age 14 years and above are considered as an adult and are not allowed to jump or play</p>
                         </div>
-                        <img src="https://i.ytimg.com/vi/NYwkGWAEpG8/maxresdefault.jpg" alt="" />
                     </div>
                 </div>
                 <hr />
 
-                <div id="passes">
-                    <h1 className='title'>Monthly Passes</h1>
-                    <div className="container">
-                        <div className="content">
-
-                        </div>
-                    </div>
-                </div>
 
                 <div id="party">
-                    <h1 className='title'>Reserve a Party Room!</h1>
                     <div className="container">
+                        <h1 className='title'>Reserve a Party Room!</h1>
+                        <p>Come book a private party room! It's the perfect place to celebrate birthdays and event for your children!</p>
                         <div className="content">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Room</th>
+                                        <th>Children</th>
+                                        <th>Adult</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
 
+                                    <tr>
+                                        <td className='td1'><strong>3 Hours</strong></td>
+                                        <td>$400</td>
+                                        <td>$30</td>
+                                        <td>$5</td>
+                                    </tr>
+                                    <tr>
+                                        <td className='td1'><strong>4 Hours</strong></td>
+                                        <td>$500</td>
+                                        <td>$40</td>
+                                        <td>$5</td>
+                                    </tr>
+                                    <tr>
+                                        <td className='td1'><strong>5 Hours</strong></td>
+                                        <td>$600</td>
+                                        <td>$45</td>
+                                        <td>$5</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p><strong>Please Note:</strong> </p>
+                            <p>Any cancellation must be made 24 hours before blah blah blah</p><br />
+                            <p>List of things included and please contact us or check the rules page for futher information</p>
                         </div>
                     </div>
                 </div>
 
                 <Footer />
             </TransitionPage>
-        </>
+        </div>
     )
 }
 

@@ -1,56 +1,124 @@
-import React from 'react'
+import React, { useRef, useState } from 'react';
 import Footer from '../footer/Footer'
 import TransitionPage from '../TransitionPage'
 import './ContactStyles.css'
+import ReCAPTCHA from "react-google-recaptcha";
+import emailjs from '@emailjs/browser';
+
+import { motion } from 'framer-motion'
+// import { useInView } from 'react-intersection-observer'
+
+//     <motion.div
+// initial={{ x: '-100vw' }}
+// animate={{ x: 0 }}
+// transition={{ type: 'spring', duration: 2, bounce: .3 }}
+//     >
+//     </motion.div>
 
 const Contact = () => {
+    const [success, setSuccess] = useState(false)
+
+
+    const form = useRef();
+    // const { ref, inView } = useInView();
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        emailjs.sendForm('service_f7qut05', 'Keiki', form.current, 'user_hWvLrmHqw4gG9NX2HMToy')
+            .then((result) => {
+                console.log(result.text);
+                setSuccess(true)
+                e.target.reset();
+            }, (error) => {
+                console.log(error.text);
+                alert('Something went wrong, please try again later')
+            });
+    }
+
+
+
     return (
         <>
             <TransitionPage>
 
                 <div className='contact'>
-                    <h1>Contact</h1>
-                    <h3>Reach out with any questions or comments!</h3>
                     <div className="container">
-                        <div className="content-form content">
-                            <form>
-                                <label>Name:
-                                    <input type="text" name="name" />
-                                </label>
-                                <label>Email:
-                                    <input type="text" name="name" />
-                                </label>
-                                <label>Phone:
-                                    <input type="text" name="name" />
-                                </label>
-                                <label>Message:
-                                    <input type="text" name="name" />
-                                </label>
+                        <h1>Contact</h1>
+                        <h3>Reach out with any questions or comments!</h3>
+                        <div className="main-content">
 
-                                <button value="Submit">Submit</button>
-                            </form>
+                            <motion.div className="content-form content"
+                                initial={{ x: '-100vw' }}
+                                animate={{ x: 0 }}
+                                transition={{ type: 'spring', duration: 2 }}
+                            >
+                                {success ? <h2 className='success'>Thank you for your message!</h2> :
+                                    <form ref={form} onSubmit={handleSubmit}>
+                                        <p>Fields marked with an <span>*</span> are required</p>
+                                        <label> What is this regarding? <span>*</span>
+                                            <select name='reason'>
+                                                <option defaultValue="general">General Question or Comment</option>
+                                                <option value="party">Book a Private Party</option>
+                                                <option value="employment">Employment</option>
+                                            </select>
+                                        </label>
+                                        <label>Name <span>*</span>
+                                            <input type="text" name="name" className='input' required placeholder='Name' />
+                                        </label>
+                                        <label>Email <span>*</span>
+                                            <input type="email" name="email" className='input' required placeholder='Email' />
+                                        </label>
+                                        <label>Phone <span>*</span>
+                                            <input type="tel" name="phone" className='input' required placeholder='Phone' />
+                                        </label>
+                                        <label>Message <span>*</span>
+                                            <textarea type="text" name="message" className='input-message' required placeholder='Your Message Here...' />
+                                        </label>
+                                        <div className="recaptcha">
 
-                        </div>
-                        <div className="content-info content">
-                            <div className="call">
-                                <h2>Call Us</h2>
-                                <h3>(808) 123 - 4567</h3>
-                            </div>
+                                            <ReCAPTCHA
+                                                sitekey="6LdHNjYfAAAAAF9g8-L8hkyTDWws-YCz3ux0G_DD"
+                                            />
+                                        </div>
 
-                            <div className="find">
-                                <h2>Find Us</h2>
-                                <h3>123 Example Ave.<br /> Honolulu HI 90001</h3>
-                            </div>
+                                        <button>Submit</button>
+                                    </form>
+
+                                }
 
 
-                            <div className="hours">
-                                <h2>Our Hours</h2>
-                                <h3>Mon-Thurs <br />10am-6pm <br /> <br />
-                                    Fri-Sun <br />10am-7pm</h3>
-                            </div>
+                            </motion.div>
+                            <motion.div className="content-info content"
+                                initial={{ x: '100vw' }}
+                                animate={{ x: 0 }}
+                                transition={{ type: 'spring', duration: 2 }}
+                            >
+                                <div className="call">
+                                    <h2>Call Us</h2>
+                                    <h3 className='phone-number'>(808)123-4567</h3>
+                                </div>
 
+                                <div className="find">
+                                    <h2>Find Us</h2>
+                                    <h3>123 Example Ave.<br /> Honolulu HI 90001</h3>
+                                </div>
+                                {/* <div className="social">
+                                <h2>Socials</h2>
+                                <FaInstagram /><FaFacebookSquare />
+                            </div> */}
+
+
+                                <div className="hours">
+                                    <h2>Our Hours</h2>
+                                    <h3>Mon - Thurs <br />10am - 6pm <br /> <br />
+                                        Fri - Sun <br />10am - 7pm</h3>
+                                </div>
+
+                            </motion.div>
                         </div>
                     </div>
+
                 </div>
                 <Footer />
             </TransitionPage>

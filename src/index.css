@@ -16,7 +16,9 @@
 .collapsible .collapse-content {
   padding: 10px;
   background-color: rgb(240, 240, 240);
+  font-family: var(--font-default);
 }
+
 .collapsible .collapse-header {
   transition: .2s ease-in-out;
   background-color: rgb(200, 200, 200);
@@ -24,6 +26,8 @@
   cursor: pointer;
   display: flex;
   align-items: center;
+  font-family: var(--font-default);
+
   /* border-bottom: 2px solid rgb(220, 220, 220); */
 }
 
@@ -68,26 +72,106 @@ h1 {
   text-shadow: 0 0 5px black, 0 0 5px black, 0 0 5px black, 0 0 5px black;
 
 }
-h1:hover{
+
+h1:hover {
   text-shadow: none !important;
-  background-image: linear-gradient(90deg, rgba(255,212,1,1) 15%, rgba(255,145,0,1) 39%, rgba(255,118,210,1) 61%, rgba(91,198,246,1) 85%);
+  background-image: linear-gradient(90deg, rgba(255, 212, 1, 1) 15%, rgba(255, 145, 0, 1) 39%, rgba(255, 118, 210, 1) 61%, rgba(91, 198, 246, 1) 85%);
   -webkit-background-clip: text;
   color: transparent;
   transition: .2s all;
 }
 
-.title{
+.title {
   transition: all .2s ease-in-out;
   cursor: default;
 }
-.title:hover{
+
+.title:hover {
   transform: scale(1.1);
 
 }
-.title:active{
+
+.title:active {
   transform: scale(1);
 }
 
+
+/* SWITCH */
+
+.toggle p {
+  padding: 5px;
+  z-index: 10;
+  font-size: 1.7rem;
+  color: white;
+  text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black !important;
+}
+
+.toggle {
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  margin: -20px 0;
+}
+
+.toggle .toggle-group {
+  margin: 1rem 0;
+  display: block;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+
+}
+
+.slider {
+  box-shadow: 0 0 0 3px white;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 20px;
+
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 50%;
+
+}
+
+input:checked+.slider {
+  background-color: #2196F3;
+}
+
+input:checked+.slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
 
 h2 {
   font-size: 4rem;
@@ -102,30 +186,34 @@ h3 {
 
 /* LINK EFFECTS */
 .link-hover {
-	position: relative;
+  position: relative;
 }
 
 .link-hover:after {
-	content: "";
-	position: absolute;
-	bottom: -3px;
-	height: 4px;
-	width: 0;
-	right: 0;
-	transition: all 300ms ease;
-  box-shadow: 0 0 1.2px black, 0 0 1.2px black, 0 0 1.2px black, 0 0 1.2px black;
-
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  height: 4px;
+  width: 0;
+  right: 0;
+  transition: all 300ms ease;
+  box-shadow: 0 0 3px black, 0 0 3px black, 0 0 3px black, 0 0 3px black;
 }
+
+.active.link-hover:after {
+  width: 100%;
+}
+
 .link__hover-color:after {
   background: white;
+}
 
-  /* linear-gradient(90deg, rgba(255,212,1,1) 20%, rgba(255,118,210,1) 50%, rgba(91,198,246,1) 80%) */
-}
 .link-hover:hover:after {
-	left: 0;
-	width: 100%;
-  
+  left: 0;
+  width: 100%;
+
 }
+
 /* -------------------------------------------- */
 
 
@@ -151,17 +239,17 @@ button {
 
 }
 
-button:hover{
+button:hover {
   background-color: dodgerblue;
   border: 1px solid dodgerblue;
   letter-spacing: 1px;
   transform: translateY(-3px);
-  box-shadow: 0 10px 10px rgba(0,0,0,1);
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 1);
 }
 
-button:active{
+button:active {
   transform: translateY(0);
-  box-shadow: 0 2px 5px rgba(0,0,0,1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 1);
 }
 
 /* @media screen and (max-width: 940px) {
@@ -188,4 +276,27 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+@media screen and (max-width: 475px) {
+  h1 {
+    font-size: 4rem !important;
+  }
+
 }

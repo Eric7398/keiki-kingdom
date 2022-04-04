@@ -1,18 +1,71 @@
-.rules {
-    width: 100%;
-    min-height: 980px;
-    padding: 6rem 1rem;
+/* WAVES */
 
-    background: url('../../assets/background/price4.jpg') no-repeat center center/cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+.w {
+    position: absolute;
+    top: 95%;
+    left: -25vw;
+    right: 0px;
+    background: url(https://i.koya.io/whitewave2.svg);
+    background-position: center;
 }
 
-.rules .rules-desc {
+.wave {
+    height: 200px;
+    transform: translateY(-40px);
+}
+
+.wave2 {
+    height: 240px;
+    transform: translateY(-80px);
+    background-size: 960px 240px;
+    opacity: 0.5;
+    left: -80vw;
+    right: -5vw;
+}
+
+.wave3 {
+    height: 220px;
+    transform: translateY(-120px);
+    background-size: 880px 220px;
+    opacity: 0.33;
+    left: 0vw;
+    right: -20vw;
+}
+
+.wave4 {
+    height: 280px;
+    transform: translateY(-160px);
+    background-size: 1120px 280px;
+    opacity: 0.1;
+    left: 0vw;
+    right: -40vw;
+}
+
+
+
+.rules {
+    width: 100%;
+    min-height: 100vh;
+    padding: 6rem 1rem;
+
+    overflow: hidden;
+    position: relative;
+    background: radial-gradient(circle, #24a4ea, #379deb 25%, #b76bf0);
+
+    background-size: 500%;
+    animation: gradient 15s ease infinite;
+    transition: .2s ease;
+
     display: flex;
-    max-width: 800px;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+
+.rules .rules-desc {
+
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -20,11 +73,14 @@
 }
 
 .rules .content {
-    height: 800px;
+    width: 800px;
+
+    height: auto;
     display: flex;
     flex-direction: column;
     z-index: 10;
     margin: 1rem;
+    gap: 20px;
 }
 
 
@@ -35,16 +91,34 @@
 }
 
 
+.rules .rules-desc .desc {
+    color: white;
+    text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
+
+}
+
+
 .rules .collapsible .collapse-header {
-    width: 800px;
-    margin-top: 1rem;
+    box-sizing: content-box;
+    border-bottom: 2px solid black;
 }
 
 .rules .collapsible .collapse-content {
     text-align: left;
-    font-family: 'Times New Roman', Times, serif;
-  }
+    background-color: white;
 
-  .rules .collapsible h3 {
-      font-family: Arial, Helvetica, sans-serif;
-  }
+
+}
+
+.rules .collapsible {
+    box-shadow: 0 0 3px black, 0 0 3px black, 0 0 3px black, 0 0 3px black;
+}
+
+
+
+@media screen and (max-width: 840px) {
+    .rules .content {
+        width: auto;
+    }
+
+}
