@@ -53,7 +53,10 @@ const Home = () => {
         <>
             <TransitionPage>
                 <div className='home'>
+                    <div className="image">
+                        <img src={character} alt="" />
 
+                    </div>
                     {stars && <Particles
                         options={{
                             "autoPlay": true,
@@ -957,11 +960,8 @@ const Home = () => {
                                 <h3 id="seconds">{seconds}</h3>
                                 <span className='seconds'>SECONDS</span>
                             </div>
-                        </div>
 
-                    </div>
-                    <div className="image">
-                        <img src={character} alt="" />
+                        </div>
 
                     </div>
                 </div>
