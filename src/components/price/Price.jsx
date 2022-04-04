@@ -1,12 +1,9 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import Footer from '../footer/Footer'
 import TransitionPage from '../TransitionPage'
 import { FaArrowDown } from "react-icons/fa";
 
 import './PriceStyles.css'
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { useAnimation } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 
