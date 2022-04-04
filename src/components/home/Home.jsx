@@ -937,7 +937,7 @@ const Home = () => {
                             <span className='lightpink'>O</span>
                             <span className='hotpink'>M</span></h1>
 
-                        <p>Time spent playing with your children are never wasted</p>
+                        <p>Time spent playing with your children is never wasted</p>
                         <Link to='about'>
                             <button className='btn'>Learn More</button>
                         </Link>
