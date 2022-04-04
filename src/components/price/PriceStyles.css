@@ -5,6 +5,7 @@
     width: 100%;
     min-height: 100vh;
     background: url('../../assets/background/rulesbg.jpg') no-repeat center center/cover;
+    background-color: #1e1e1e;
     display: flex;
     align-items: center;
     flex-direction: column;

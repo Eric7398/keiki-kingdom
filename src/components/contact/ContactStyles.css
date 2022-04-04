@@ -4,6 +4,8 @@
     padding: 6rem 1rem;
 
     background: url('../../assets/background/kids-wall.jpg') no-repeat center center/cover;
+    background-color: #1e1e1e;
+
     display: flex;
     justify-content: center;
     align-items: center;
