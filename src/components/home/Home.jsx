@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './HomeStyles.css'
 import character from '../../assets/character/character.png'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import TransitionPage from '../TransitionPage'
 import Particles from "react-tsparticles";
 
