@@ -2,12 +2,12 @@ import { Routes, Route, useLocation } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion';
 
 import Home from "./components/home/Home";
-import Navbar from "./components/navbar/Navbar";
-import About from "./components/about/About";
-import Contact from "./components/contact/Contact";
-import Price from "./components/price/Price";
+// import Navbar from "./components/navbar/Navbar";
+// import About from "./components/about/About";
+// import Contact from "./components/contact/Contact";
+// import Price from "./components/price/Price";
+// import Rules from './components/rules/Rules';
 import NotFound from './components/404/NotFound';
-import Rules from './components/rules/Rules';
 
 
 function App() {
