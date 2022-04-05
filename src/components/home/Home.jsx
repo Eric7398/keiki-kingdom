@@ -942,9 +942,9 @@ const Home = () => {
                             <span className='hotpink'>M</span></h1>
 
                         <p>Time spent playing with your children is never wasted</p>
-                        <Link to='about'>
+                        {/* <Link to='about'>
                             <button className='btn'>Learn More</button>
-                        </Link>
+                        </Link> */}
 
                         <h2 >COMING SOON!</h2>
                         <div className="countdown">
