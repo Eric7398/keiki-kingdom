@@ -8,24 +8,22 @@ import Contact from "./components/contact/Contact";
 import Price from "./components/price/Price";
 import NotFound from './components/404/NotFound';
 import Rules from './components/rules/Rules';
-// import ScrollTop from './components/ScrollTop';
 
 
 function App() {
   const location = useLocation()
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <AnimatePresence exitBeforeEnter>
         <Routes key={location.pathname} location={location}>
-          {/* <ScrollTop /> */}
 
 
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
+          {/* <Route path="/about" element={<About />} />
           <Route path="/price" element={<Price />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/rules" element={<Rules />} />
+          <Route path="/rules" element={<Rules />} /> */}
           <Route path="*" element={<NotFound />} />
 
         </Routes>
