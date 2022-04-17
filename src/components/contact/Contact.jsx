@@ -4,23 +4,19 @@ import TransitionPage from '../TransitionPage'
 import './ContactStyles.css'
 import ReCAPTCHA from "react-google-recaptcha";
 import emailjs from '@emailjs/browser';
+import GoogleMap from './GoogleMap.jsx'
 
 import { motion } from 'framer-motion'
-// import { useInView } from 'react-intersection-observer'
 
-//     <motion.div
-// initial={{ x: '-100vw' }}
-// animate={{ x: 0 }}
-// transition={{ type: 'spring', duration: 2, bounce: .3 }}
-//     >
-//     </motion.div>
 
 const Contact = () => {
     const [success, setSuccess] = useState(false)
-
+    const location = {
+        lat: 21.299760,
+        lng: -157.837200,
+    }
 
     const form = useRef();
-    // const { ref, inView } = useInView();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -66,6 +62,11 @@ const Contact = () => {
                                         <label>Name <span>*</span>
                                             <input type="text" name="name" className='input' required placeholder='Name' />
                                         </label>
+                                        {/* <label>Phone or Email<span>*</span>
+                                            <input type="radio" className='input' value="Phone" /> Phone
+                                            <input type="radio" className='input' value="Email" /> Email
+                                        </label> */}
+
                                         <label>Email <span>*</span>
                                             <input type="email" name="email" className='input' required placeholder='Email' />
                                         </label>
@@ -117,6 +118,13 @@ const Contact = () => {
 
                             </motion.div>
                         </div>
+                        <div className="googlemap">
+                            <GoogleMap location={location} />
+
+                        </div>
+
+
+
                     </div>
 
                 </div>

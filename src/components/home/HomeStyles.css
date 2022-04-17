@@ -31,13 +31,14 @@
 }
 
 .home h1 {
+    cursor: pointer;
     font-size: 8rem;
     padding-top: 3.2rem;
     color: #f8f8f8;
     overflow: hidden;
     letter-spacing: 2px;
     font-family: 'Chela One', cursive;
-    text-shadow: 0 0 5px white, 0 0 5px white, 0 0 5px white, 0 0 5px white;
+    text-shadow: 0 0 5px white, 0 0 5px white, 0 0 5px white, 0 0 5px white !important;
     z-index: 10;
 }
 
@@ -333,7 +334,7 @@
 
 }
 
-@media screen and (max-width: 796px) {
+@media screen and (max-width: 880px) {
     @keyframes bounce {
         0% {
             transform: scale(1, 1) translateY(0);
