@@ -13,7 +13,7 @@ const GoogleMap = ({ location }) => {
                     fontSize: '2rem',
                 }}
             />
-            <p className="pin-text">1460 S Beretania St, Honolulu, HI 96814</p>
+            <p className="pin-text"><span className='pin-name'>Keiki Kingdom</span><br />1460 S Beretania St, Honolulu, HI 96814</p>
         </div>
     )
     return (

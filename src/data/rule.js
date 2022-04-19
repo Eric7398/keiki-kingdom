@@ -1,7 +1,7 @@
 export const rule = [
     {
         title: "What should we wear?",
-        description: "Everyone must purchase their Keiki Kingdom socks with us first. Everyone who is playing in our facility must wear these socks. Shoes, sneakers, and sandals are not permitted. This helps keep our facility clean for our patrons and ensures the longevity of our equipment. Items like jewelry, watches and loose clothing should be removed from every adult and child prior to entering in the play area. Remember we don't want anything getting caught, damaged or broken.",
+        description: "- Everyone who is playing in our facility must wear our Keiki Kingdom socks. Shoes, sneakers, and sandals are not permitted. Items like jewelry, watches and loose clothing should be removed from every adult and child prior to entering in the play area. Remember we don't want anything getting caught, damaged or broken.",
     },
     {
         title: "Can we bring in food and beverages?",
@@ -13,7 +13,7 @@ export const rule = [
     },
     {
         title: "Do we need a waiver to enter?",
-        description: "Yes! All parents or guardians must sign a waiver before entry into our facility. Please see our waiver pages here PLACEHOLDER-LINK. Create an account with the guardian’s names and add the child participants. When arriving, you must have a legal form of identification. (drivers license or government issued I.D.)",
+        description: "Yes! All parents or guardians must sign a waiver before entry into our facility. When arriving, you must have a legal form of identification. (drivers license or government issued I.D.)",
     },
     {
         title: "Can we bring toys with us to different areas?",

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './HomeStyles.css'
 import character from '../../assets/character/character.png'
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import TransitionPage from '../TransitionPage'
 import StarsParticle from '../particles/star'
 import SnowParticle from '../particles/snow'
@@ -122,9 +122,9 @@ const Home = () => {
                             <span className='hotpink'>M</span></h1>
 
                         <p>Time spent playing with your children is never wasted</p>
-                        {/* <Link to='about'>
+                        <Link to='about'>
                             <button className='btn'>Learn More</button>
-                        </Link> */}
+                        </Link>
 
                         <h2>COMING SOON!</h2>
                         <div className="countdown">

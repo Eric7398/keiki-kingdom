@@ -192,11 +192,17 @@
 
 }
 
+.pin-name {
+    font-size: 1.3rem;
+    color: white;
+    text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black;
+}
+
 .pin-text {
     font-size: 1.3em;
     font-weight: 700;
     position: absolute;
-    top: -15px;
+    top: -30px;
     left: 10px;
     width: 150px;
 
